@@ -1,0 +1,34 @@
+<resources>
+
+    <style name="TitleStyle">
+        <item name="fontFamily">@font/indie_flower</item>
+        <item name="android:textSize">64sp</item>
+        <item name="android:textColor">@color/green</item>
+    </style>
+
+    <style name="EditText" parent="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/selector_edit_text</item>
+        <item name="hintTextColor">@color/white</item>
+    </style>
+
+    <style name="SelectedNavigationBar">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="TextHeadStyle">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="SwitchStyle">
+        <item name="colorPrimary">@color/green</item>
+        <item name="colorSurfaceVariant">@color/gray</item>
+    </style>
+
+    <style name="FABShapeAppereance" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+
+</resources>

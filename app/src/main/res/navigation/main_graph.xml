@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/navigateFragment">
+
+    <fragment
+        android:id="@+id/logInFragment"
+        android:name="com.example.pawpal.screens.authorization.logIn.LogInFragment"
+        android:label="LogInFragment"
+        tools:layout="@layout/fragment_log_in">
+
+        <action
+            android:id="@+id/action_logInFragment_to_registrationFragment"
+            app:destination="@id/registrationFragment"
+            app:popUpTo="@id/logInFragment" />
+        <action
+            android:id="@+id/action_logInFragment_to_onboardingFragment"
+            app:destination="@id/onboardingFragment" />
+        <action
+            android:id="@+id/action_logInFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/logInFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/registrationFragment"
+        android:name="com.example.pawpal.screens.authorization.registration.RegistrationFragment"
+        android:label="RegistrationFragment"
+        tools:layout="@layout/fragment_registration">
+        <action
+            android:id="@+id/action_registrationFragment_to_onboardingFragment"
+            app:destination="@id/onboardingFragment" />
+        <action
+            android:id="@+id/action_registrationFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/navigateFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/onboardingFragment"
+        android:name="com.example.pawpal.screens.onboarding.OnboardingFragment"
+        android:label="OnboardingFragment"
+        tools:layout="@layout/fragment_onboarding">
+        <action
+            android:id="@+id/action_onboardingFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/navigateFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.pawpal.screens.home.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_logInFragment"
+            app:destination="@id/logInFragment"
+            app:popUpTo="@id/logInFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_homeFragment_to_createReminderFragment"
+            app:destination="@id/createReminderFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_detailReminderFragment"
+            app:destination="@id/detailReminderFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigateFragment"
+        android:name="com.example.pawpal.screens.navigate.NavigateFragment"
+        android:label="NavigateFragment" >
+        <action
+            android:id="@+id/action_navigateFragment_to_logInFragment"
+            app:destination="@id/logInFragment"
+            app:popUpTo="@id/navigateFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_navigateFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/navigateFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/createReminderFragment"
+        android:name="com.example.pawpal.screens.home.medical_page.screens.reminder.create_reminder.CreateReminderFragment"
+        android:label="CreateReminderFragment"
+        tools:layout="@layout/fragment_create_reminder"/>
+    <fragment
+        android:id="@+id/detailReminderFragment"
+        android:name="com.example.pawpal.screens.home.medical_page.screens.reminder.detail_reminder.DetailReminderFragment"
+        android:label="DetailReminderFragment"
+        tools:layout="@layout/fragment_create_reminder">
+        <argument
+            android:name="id"
+            app:argType="long" />
+    </fragment>
+
+</navigation>
