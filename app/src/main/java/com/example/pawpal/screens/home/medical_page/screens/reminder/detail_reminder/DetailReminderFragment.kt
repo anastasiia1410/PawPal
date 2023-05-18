@@ -46,6 +46,7 @@ class DetailReminderFragment : BaseFragment<FragmentDetailReminderBinding>() {
             ivArrowBack.setOnClickListener { findNavController().popBackStack() }
 
             btAddNote.setOnClickListener {
+                // coment
                 val dialog = AlertDialog()
                 dialog.show(parentFragmentManager, AlertDialog::class.java.simpleName)
                 parentFragmentManager.setFragmentResultListener(DIALOG_KEY, viewLifecycleOwner)
