@@ -4,4 +4,5 @@ This application is a pet management tool that allows users to register their pe
 
 **Stack of technologies:** Android SDK, Kotlin, RxJava, RxAndroid, MVVM, LiveData, Room, Retrofit, Okhttp, Gson, ViewBinding, Material Design library, Jetpack Navigation component, Glide, Circle image
 
-![pawpal](https://github.com/anastasiia1410/PawPal/assets/126270314/4d946e0b-0c28-4bd1-8462-70c10cf3cb72)
+![image_paw_pal](https://github.com/anastasiia1410/PawPal/assets/126270314/4c08073c-6d6f-4a42-9580-b60ea7cfd200)
+
