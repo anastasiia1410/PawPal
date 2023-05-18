@@ -2,37 +2,33 @@ package com.example.pawpal.database.entity
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.example.pawpal.screens.home.medical_page.entity.Reminder
+import com.example.pawpal.screens.home.medical_page.entity.Note
 import com.example.pawpal.util.getFullDate
 import com.example.pawpal.util.getStringDate
 
-@Entity(tableName = "Reminder")
-data class ReminderDatabase(
+@Entity(tableName = "Notes")
+data class NotesDatabase(
     @PrimaryKey(true)
-    val reminderId: Long = 0L,
+    val notesId: Long = 0L,
+    val reminderId: Long,
     val title: String,
     val date: String,
-    val period : Int?,
-    val notify: Int?,
 )
 
-fun ReminderDatabase.toReminder(): Reminder {
-
-    return Reminder(
+fun NotesDatabase.toNote(): Note {
+    return Note(
+        notesId = this.notesId,
         reminderId = this.reminderId,
         title = this.title,
         date = (this.date).getFullDate(),
-        period = this.period,
-        notify = this.notify
     )
 }
 
-fun Reminder.toReminderDatabase(): ReminderDatabase {
-    return ReminderDatabase(
+fun Note.toNoteDatabase(): NotesDatabase {
+    return NotesDatabase(
+        notesId = this.notesId,
         reminderId = this.reminderId,
         title = this.title,
         date = (this.date).getStringDate(),
-        period = this.period,
-        notify = this.notify
     )
 }

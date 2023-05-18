@@ -2,10 +2,9 @@ package com.example.pawpal.screens.home.medical_page.entity
 
 import java.util.Date
 
-data class Reminder(
-    val reminderId: Long = 0L,
+data class Note(
+    val notesId: Long = 0L,
+    val reminderId: Long,
     val title: String,
     val date: Date,
-    val period : Int?,
-    val notify: Int?,
 )

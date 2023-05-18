@@ -46,7 +46,7 @@ class ReminderAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
                     tvTitle.text = reminderItem.reminder.title
                     tvDate.text = dateFormat.format(reminderItem.reminder.date)
                     cvCardView.setOnClickListener {
-                        onItemClick?.invoke(reminderItem.reminder.id)
+                        onItemClick?.invoke(reminderItem.reminder.reminderId)
                     }
                 }
             }

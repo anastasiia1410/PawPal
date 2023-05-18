@@ -1,5 +1,6 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -17,11 +18,11 @@
         android:id="@+id/tvPageName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@id/ivArrowBack"
         android:layout_marginStart="16dp"
         android:gravity="center_vertical"
-        android:textStyle="bold"
         android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/ivArrowBack"
         app:layout_constraintStart_toEndOf="@id/ivArrowBack"
         app:layout_constraintTop_toTopOf="@id/ivArrowBack" />
 
@@ -113,7 +114,7 @@
         android:layout_marginVertical="16dp"
         android:hint="@string/notify"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tilPeriod">
+        app:layout_constraintTop_toBottomOf="@id/tilTime">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etNotify"
@@ -123,24 +124,40 @@
             android:inputType="number" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tilPeriod"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvNote"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
         android:layout_marginVertical="16dp"
-        android:hint="@string/period"
-        android:visibility="gone"
-        app:layout_constraintEnd_toEndOf="@id/tilNotifies"
+        android:text="@string/notes"
+        android:textSize="22sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tilTime">
+        app:layout_constraintTop_toBottomOf="@id/tilNotifies" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etPeriod"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:enabled="false"
-            android:inputType="number" />
-    </com.google.android.material.textfield.TextInputLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvRecycler"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="70dp"
+        android:clipToPadding="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvNote"
+        tools:listitem="@layout/item_reminder" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btAddNote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginVertical="8dp"
+        android:backgroundTint="#1C1C1C"
+        android:elevation="8dp"
+        app:borderWidth="0dp"
+        app:fabCustomSize="80dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:shapeAppearanceOverlay="@style/FABShapeAppereance"
+        app:srcCompat="@drawable/ic_add_image"
+        app:tint="#BEADE9" />
 </androidx.constraintlayout.widget.ConstraintLayout>

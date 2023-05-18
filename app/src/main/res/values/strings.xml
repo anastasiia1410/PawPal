@@ -41,4 +41,5 @@
     <string name="yesterday">Вчора</string>
     <string name="days_ago_pattern">%d днів тому</string>
     <string name="detail_info">Детальна інформація</string>
+    <string name="add_note">Введіть нотатку</string>
 </resources>
