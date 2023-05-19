@@ -42,6 +42,11 @@ class DatabaseManager(context: Context) {
             }
     }
 
+    fun getAllNotes(): Single<List<Note>> {
+        return db.reminderDao().getAllNotes()
+            .map { notes -> notes.map { it.toNote() } }
+    }
+
     companion object {
         const val DATABASE_NAME = "pawPal.sqlite"
 

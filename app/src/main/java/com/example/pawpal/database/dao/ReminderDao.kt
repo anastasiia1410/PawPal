@@ -24,4 +24,7 @@ interface ReminderDao {
     @Transaction
     @Query("SELECT * FROM Reminder WHERE reminderId = :reminderId")
     fun getReminderByIdWithNotes(reminderId: Long): Single<RemindersWithNotes>
+
+    @Query("SELECT * FROM Notes ORDER BY date ASC")
+    fun getAllNotes() : Single<List<NotesDatabase>>
 }

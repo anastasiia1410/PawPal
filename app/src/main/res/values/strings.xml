@@ -13,17 +13,12 @@
     <string name="age_animal">Скільки років (1–100)?</string>
     <string name="add">Додати</string>
     <string name="exit">Вийти</string>
-    <string name="head_page">Head Fragment</string>
-    <string name="medical_page">Medical Fragment</string>
-    <string name="contacts_page">Contacts Fragment</string>
-    <string name="profile_page">Profile Fragment</string>
     <string name="main">Головна</string>
     <string name="medical">Медзаписи</string>
     <string name="contacts">Контакти</string>
     <string name="profile">Профіль</string>
     <string name="food">Їжа</string>
     <string name="toys">Іграшки</string>
-    <string name="interesting">Цікавості</string>
     <string name="grn_pattern">%1s грн</string>
     <string name="see_all">Переглянути всі</string>
     <string name="percents">%1d %%</string>
@@ -35,7 +30,6 @@
     <string name="date">Коли</string>
     <string name="time">О котрій</string>
     <string name="notify">Нагадати (за N хвилин)</string>
-    <string name="start_date">Починаючи з</string>
     <string name="period">Період (кожні N діб)</string>
     <string name="create_reminder">Створити</string>
     <string name="yesterday">Вчора</string>

@@ -1,4 +1,4 @@
-package com.example.pawpal.screens.home.medical_page.screens.reminder.detail_reminder
+package com.example.pawpal.screens.home.medical_page.screens.notes
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -8,7 +8,8 @@ import com.example.pawpal.screens.home.medical_page.entity.Note
 import com.example.pawpal.util.getStringOnlyDate
 
 class NotesAdapter : RecyclerView.Adapter<NotesAdapter.ItemVH>() {
-    private var noteList: MutableList<Note> = mutableListOf()
+    private val items: MutableList<Note> = mutableListOf()
+    var onItemClick: ((id: Long) -> Unit)? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemVH {
         return ItemVH(
@@ -21,22 +22,26 @@ class NotesAdapter : RecyclerView.Adapter<NotesAdapter.ItemVH>() {
     }
 
     override fun onBindViewHolder(holder: ItemVH, position: Int) {
-        val note = noteList[position]
+        val item = items[position]
         with(holder.binding) {
-            tvTitle.text = note.title
-            tvDate.text = note.date.getStringOnlyDate()
+            tvTitle.text = item.title
+            tvDate.text = item.date.getStringOnlyDate()
+            cvCardView.setOnClickListener {
+                onItemClick?.invoke(item.reminderId)
+            }
         }
     }
 
     override fun getItemCount(): Int {
-        return noteList.size
+        return items.size
     }
 
-    fun updateItems(newListNotes: List<Note>) {
-        noteList.clear()
-        noteList.addAll(newListNotes)
+    fun updateItems(newItems : List<Note>){
+        items.clear()
+        items.addAll(newItems)
         notifyDataSetChanged()
     }
+
 
     class ItemVH(val binding: ItemReminderBinding) : RecyclerView.ViewHolder(binding.root)
 }
