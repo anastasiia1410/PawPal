@@ -4,10 +4,11 @@ import androidx.room.Embedded
 import androidx.room.Relation
 
 data class RemindersWithNotes(
-    @Embedded val reminderDatabase: ReminderDatabase,
+    @Embedded
+    val reminderDatabase: ReminderDatabase,
     @Relation(
         parentColumn = "reminderId",
         entityColumn = "reminderId"
     )
-    val listNotesDatabase: List<NotesDatabase>
+    val listNotesDatabase: List<NotesDatabase>,
 )

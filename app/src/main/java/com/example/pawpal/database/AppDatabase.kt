@@ -7,8 +7,11 @@ import com.example.pawpal.database.entity.NotesDatabase
 import com.example.pawpal.database.entity.ReminderDatabase
 
 @Database(
-    entities = [ReminderDatabase::class,
-        NotesDatabase::class], version = 2
+    entities = [
+        ReminderDatabase::class,
+        NotesDatabase::class
+    ],
+    version = 2
 )
 internal abstract class AppDatabase : RoomDatabase() {
     abstract fun reminderDao(): ReminderDao

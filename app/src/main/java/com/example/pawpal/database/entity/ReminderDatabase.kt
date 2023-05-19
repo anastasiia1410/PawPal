@@ -17,7 +17,6 @@ data class ReminderDatabase(
 )
 
 fun ReminderDatabase.toReminder(): Reminder {
-
     return Reminder(
         reminderId = this.reminderId,
         title = this.title,
