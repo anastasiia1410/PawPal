@@ -64,6 +64,8 @@
             app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_homeFragment_to_createReminderFragment"
+            app:exitAnim="@anim/slide_to_left"
+            app:enterAnim="@anim/slide_to_right"
             app:destination="@id/createReminderFragment" />
         <action
             android:id="@+id/action_homeFragment_to_detailReminderFragment"
